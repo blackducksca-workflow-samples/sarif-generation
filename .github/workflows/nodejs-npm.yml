@@ -7,7 +7,7 @@ on:
     branches: [ main ]
                                                                                                                                                                                                                                           
 jobs:
-  blackduck-sarif:
+  blackducksca-sarif-report:
     runs-on: [mac-arm-sh]
                                                                                                                                                                                                                                           
     steps:
@@ -30,7 +30,7 @@ jobs:
         blackducksca_token: ${{ secrets.BLACKDUCK_TOKEN }}
         blackducksca_reports_sarif_create: true
         blackducksca_reports_sarif_severities: 'CRITICAL,HIGH'
-        blackducksca_reports_sarif_groupSCAIssues: true
+        blackducksca_reports_sarif_groupSCAIssues: false
         blackducksca_upload_sarif_report: true
         github_token: ${{ secrets.GITHUB_TOKEN }}
       env:
