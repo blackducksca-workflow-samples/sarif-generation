@@ -18,10 +18,10 @@ jobs:
     #   with:
     #     node-version: '18'
                                                                                                                                                                                                                                           
-    # - name: Install dependencies
-    #   run: |
-    #     cd nodejs-npm
-    #     npm install
+    - name: Install dependencies
+      run: |
+        cd nodejs-npm
+        npm install
                                                                                                                                                                                                                                           
     - name: Black Duck SARIF Scan
       uses: blackduck-inc/black-duck-security-scan@v2
