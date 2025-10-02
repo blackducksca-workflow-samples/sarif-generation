@@ -31,7 +31,7 @@ jobs:
         blackducksca_reports_sarif_create: true
         blackducksca_reports_sarif_severities: 'CRITICAL,HIGH'
         blackducksca_reports_sarif_groupSCAIssues: false
-        detect_args: '--detect.source.path=/Users/madhusud/Hackathon/Integrations_Documentation/Integrations_Code_Examples/runner-mac-arm-sh/_work/sarif-generation/sarif-generation/nodejs-npm'
+        #detect_args: '--detect.source.path=/Users/madhusud/Hackathon/Integrations_Documentation/Integrations_Code_Examples/runner-mac-arm-sh/_work/sarif-generation/sarif-generation/nodejs-npm'
         #blackducksca_upload_sarif_report: true
         github_token: ${{ secrets.GITHUB_TOKEN }}
         include_diagnostics: true
