@@ -31,7 +31,7 @@ jobs:
         blackducksca_reports_sarif_create: true
         blackducksca_reports_sarif_severities: 'CRITICAL,HIGH'
         blackducksca_reports_sarif_groupSCAIssues: false
-        blackducksca_upload_sarif_report: true
+        #blackducksca_upload_sarif_report: true
         github_token: ${{ secrets.GITHUB_TOKEN }}
       env:
         DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
