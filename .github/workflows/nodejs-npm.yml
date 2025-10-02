@@ -22,18 +22,24 @@ jobs:
     #   run: |
     #     cd nodejs-npm
     #     npm install
+
+    - name: Print project directory                                                                                                                                                                                                          
+      run: echo "Project directory is ${{ github.workspace }}"                                                                                                                                                                               
+                                                                                                                                                                                                                                         
+    - name: List project contents                                                                                                                                                                                                            
+      run: ls -la ${{ github.workspace }}   
                                                                                                                                                                                                                                           
-    - name: Black Duck SARIF Scan
-      uses: blackduck-inc/black-duck-security-scan@v2
-      with:
-        blackducksca_url: ${{ secrets.BLACKDUCK_URL }}
-        blackducksca_token: ${{ secrets.BLACKDUCK_TOKEN }}
-        blackducksca_reports_sarif_create: true
-        blackducksca_reports_sarif_severities: 'CRITICAL,HIGH'
-        blackducksca_reports_sarif_groupSCAIssues: false
-        #detect_args: '--detect.source.path=/Users/madhusud/Hackathon/Integrations_Documentation/Integrations_Code_Examples/runner-mac-arm-sh/_work/sarif-generation/sarif-generation/nodejs-npm'
-        #blackducksca_upload_sarif_report: true
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        include_diagnostics: true
-      env:
-        DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
+    # - name: Black Duck SARIF Scan
+    #   uses: blackduck-inc/black-duck-security-scan@v2
+    #   with:
+    #     blackducksca_url: ${{ secrets.BLACKDUCK_URL }}
+    #     blackducksca_token: ${{ secrets.BLACKDUCK_TOKEN }}
+    #     blackducksca_reports_sarif_create: true
+    #     blackducksca_reports_sarif_severities: 'CRITICAL,HIGH'
+    #     blackducksca_reports_sarif_groupSCAIssues: false
+    #     #detect_args: '--detect.source.path=/Users/madhusud/Hackathon/Integrations_Documentation/Integrations_Code_Examples/runner-mac-arm-sh/_work/sarif-generation/sarif-generation/nodejs-npm'
+    #     #blackducksca_upload_sarif_report: true
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     include_diagnostics: true
+    #   env:
+    #     DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
