@@ -29,6 +29,9 @@ jobs:
         blackducksca_url: ${{ secrets.BLACKDUCK_URL }}
         blackducksca_token: ${{ secrets.BLACKDUCK_TOKEN }}
         blackducksca_reports_sarif_create: true
+        blackducksca_reports_sarif_severities: 'CRITICAL,HIGH'
+        blackducksca_reports_sarif_groupSCAIssues: true
+        blackducksca_upload_sarif_report: true
         github_token: ${{ secrets.GITHUB_TOKEN }}
       env:
         DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
