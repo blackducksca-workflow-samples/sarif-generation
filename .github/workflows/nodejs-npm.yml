@@ -18,10 +18,10 @@ jobs:
     #   with:
     #     node-version: '18'
                                                                                                                                                                                                                                           
-    - name: Install dependencies
-      run: |
-        cd nodejs-npm
-        npm install
+    # - name: Install dependencies
+    #   run: |
+    #     cd nodejs-npm
+    #     npm install
                                                                                                                                                                                                                                           
     - name: Black Duck SARIF Scan
       uses: blackduck-inc/black-duck-security-scan@v2
@@ -34,5 +34,6 @@ jobs:
         detect_args: '--detect.source.path=/Users/madhusud/Hackathon/Integrations_Documentation/Integrations_Code_Examples/runner-mac-arm-sh/_work/sarif-generation/sarif-generation/nodejs-npm'
         #blackducksca_upload_sarif_report: true
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        include_diagnostics: true
       env:
         DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
