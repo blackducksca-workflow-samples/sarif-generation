@@ -1,10 +1,9 @@
-name: Black Duck SARIF Generation
+name: Black Duck SCA Scan with SARIF Generation
                                                                                                                                                                                                                                           
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ main, master, develop, stage, release ]
+  
                                                                                                                                                                                                                                           
 jobs:
   blackducksca-sarif-report:
@@ -14,7 +13,7 @@ jobs:
     - name: Checkout Source
       uses: actions/checkout@v4
                                                                                                                                                                                                                                           
-    - name: Black Duck SARIF Scan
+    - name: Black Duck SCA Scan with SARIF Generation
       uses: blackduck-inc/black-duck-security-scan@v2
       with:
         blackducksca_url: ${{ secrets.BLACKDUCK_URL }}
