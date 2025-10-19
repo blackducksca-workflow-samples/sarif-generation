@@ -17,8 +17,8 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'  # Specify Node version
-        cache: 'npm'
-        cache-dependency-path: nodejs-npm/package-lock.json
+        #cache: 'npm'
+        #cache-dependency-path: nodejs-npm/package-lock.json
 
     - name: Install dependencies
       run: npm install  # Use npm ci for faster, reliable installs
